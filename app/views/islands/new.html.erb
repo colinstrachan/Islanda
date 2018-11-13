@@ -1,23 +1,28 @@
-<div class="container">
+
+
+  <div class="wrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://www.touropia.com/gfx/d/uninhabited-islands-around-the-world/rock_islands.jpg?v=1');">
+    <div class="form-container">
   <%= simple_form_for(@island) do |f| %>
     <div class="form-inputs">
-      <div class="signup-container" style="width:50%; padding: 20px">
+      <div class="signup-container" style="width:100%; padding: 20px">
   <!-- [...] -->
         <%= f.input :name, required: true %>
+        <%= f.input :location, required: true %>
         <%= f.input :climate, required: true %>
         <%= f.input :price, required: true %>
         <%= f.input :capacity, required: true %>
         <%= f.input :description, required: true %>
-        <%= f.input :location, required: true %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
     <!-- [...] -->
+ <div class="form-actions">
+      <%= f.button :submit, "Create island", class: 'btn-primary btn-lg' %>
+    </div>
 
       </div>
     </div>
-    <div class="form-actions">
-      <%= f.button :submit, "Create island" %>
-    </div>
 
-  <% end %>
+<% end %>
 </div>
+  </div>
+
