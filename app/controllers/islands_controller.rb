@@ -2,6 +2,7 @@ class IslandsController < ApplicationController
   before_action :set_islands, only: [:show, :edit, :update, :destroy]
 
   def index
+    @islands = Island.all
     @islands = policy_scope(Island).order(created_at: :desc)
   end
 
