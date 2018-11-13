@@ -1,0 +1,35 @@
+.booking-container {
+  padding: 20px;
+}
+
+.booking-info {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #eeeeee;
+  padding: 10px;
+}
+
+.booking-price-left {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.booking-price-right {
+  font-size: 16px;
+  font-weight: thin;
+}
+
+.booking-form {
+  height: 140px;
+}
+
+.book-button {
+  width: 100%;
+  background-color: #6b7daf;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: 0;
+}
