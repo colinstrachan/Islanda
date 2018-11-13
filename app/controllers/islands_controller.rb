@@ -2,19 +2,22 @@ class IslandsController < ApplicationController
   before action :set_islands, only: [:show, :edit, :update, :destroy]
 
   def index
-    @islands = Island.all
+    @islands = policy_scope(Island).order(created_at: :desc)
   end
 
   def new
     @island = Island.new
+    authorize @island
   end
 
   def show
+    authorize @island
   end
 
   def create
     Island.create(islands_params)
     redirect to islands_path
+    authorize @island
   end
 
   def edit
