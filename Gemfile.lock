@@ -246,6 +246,7 @@ DEPENDENCIES
   pundit
   rails (= 5.2.1)
   redis
+  rest-client (>= 2.0.2)
   sassc-rails
   simple_form
   spring
@@ -258,4 +259,4 @@ RUBY VERSION
    ruby 2.4.4p296
 
 BUNDLED WITH
-   1.16.5
+   1.17.1
