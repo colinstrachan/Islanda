@@ -2,21 +2,24 @@ class BookingsController < ApplicationController
   before_action :set_islands
 
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @bookking.island = @island
+    @booking.island = @island
     @booking.save
+    authorize @booking
   end
 
   def destroy
