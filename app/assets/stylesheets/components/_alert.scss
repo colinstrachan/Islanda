@@ -6,10 +6,17 @@
   margin: 0;
   text-align: center;
   color: white;
+  padding: 0px;
 }
 .alert-info {
   background: $green;
+  padding: 15px;
 }
 .alert-warning {
   background: $red;
+  padding: 15px;
+}
+
+.notice {
+  margin: 0px;
 }
