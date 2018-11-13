@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :islands do
     resources :bookings, only: [:new, :create]
   end
+  get "islands/search", to: "islands#search"
   resources :users, only: [:show] do
     resources :bookings, only: [:index]
   end
