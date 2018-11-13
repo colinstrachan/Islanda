@@ -7,4 +7,6 @@ class Island < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :capacity, presence: true
+  mount_uploader :photo, PhotoUploader
+
 end
