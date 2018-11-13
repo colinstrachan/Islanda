@@ -1,25 +1,23 @@
-<div class="conatiner"></div>
-<%= simple_form_for(@island) do |f| %>
-  <div class="form-inputs">
-    <div class="signup-container" style="width:50%; padding: 20px">
+<div class="container">
+  <%= simple_form_for(@island) do |f| %>
+    <div class="form-inputs">
+      <div class="signup-container" style="width:50%; padding: 20px">
   <!-- [...] -->
-      <%= f.input :name, required: true %>
-      <%= f.input :climate, required: true %>
-      <%= f.input :price, required: true %>
-      <%= f.input :capacity, required: true %>
-      <%= f.input :description, required: true %>
-      <%= f.input :location, required: true %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :name, required: true %>
+        <%= f.input :climate, required: true %>
+        <%= f.input :price, required: true %>
+        <%= f.input :capacity, required: true %>
+        <%= f.input :description, required: true %>
+        <%= f.input :location, required: true %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
     <!-- [...] -->
 
+      </div>
     </div>
-  </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Create island" %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Create island" %>
-  </div>
-
-<% end %>
-
+  <% end %>
 </div>
