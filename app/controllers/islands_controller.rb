@@ -1,5 +1,5 @@
 class IslandsController < ApplicationController
-  before action :set_islands, only: [:show, :edit, :update, :destroy]
+  before_action :set_islands, only: [:show, :edit, :update, :destroy]
 
   def index
     @islands = policy_scope(Island).order(created_at: :desc)
