@@ -1,5 +1,6 @@
 class Island < ApplicationRecord
   has_many :bookings, dependent: :destroy
+  belongs_to :user
   validates :name, uniqueness: true, presence: true
   validates :location, uniqueness: true, presence: true
   validates :climate, presence: true
