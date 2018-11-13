@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+hawai = Island.create(name: 'guillo', description: "dd", price: 5, capacity: 4, climate: "gg", user_id: 1, location: "pacific")

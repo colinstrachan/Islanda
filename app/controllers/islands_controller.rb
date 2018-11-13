@@ -32,6 +32,7 @@ class IslandsController < ApplicationController
   private
    def islands_params
     params.require(:island).permit(:name, :description, :location, :climate, :capacity, :price)
+  end
 
    def set_islands
     @island = Island.find(params[:id])
