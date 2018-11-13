@@ -1,4 +1,5 @@
 class IslandsController < ApplicationController
+  before action :set_islands, only: [:show, :edit, :update, :destroy]
 
   def index
     @islands = Island.all
@@ -12,15 +13,20 @@ class IslandsController < ApplicationController
   end
 
   def create
+    Island.create(islands_params)
+    redirect to islands_path
   end
 
   def edit
   end
 
   def update
+    @island.update(islands_params)
+    redirect_to island_path(@island)
   end
 
   def destroy
+    @island.destroy
   end
 
   private
