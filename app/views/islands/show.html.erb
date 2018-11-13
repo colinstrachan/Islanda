@@ -10,7 +10,9 @@
           <h1><%= @island.name %></h1>
           <h2><%= @island.location %></h2>
         </div>
-        <div class="island-owner">
+        <div class="island-owner-parent">
+        </div>
+        <div class="island-owner-child">
           <%= image_tag("avatar-blank", class: "island-avatar") %>
           <h4><%= @island.user.first_name %> <%= @island.user.last_name %></h4>
         </div>

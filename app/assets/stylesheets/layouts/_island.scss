@@ -14,7 +14,7 @@
   background-color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
   margin: 0 auto;
   width: 1000px;
   padding: 20px 40px 20px 40px;
@@ -23,7 +23,8 @@
 .island-info {
   flex: 650px;
   h1 {
-    line-height: 20px;
+    line-height: 15px;
+    font-size: 38px;
   }
   h5 {
     font-weight: bold;
@@ -40,11 +41,15 @@
     font-size: 24px;
     color: #aaaaaa;
   }
+  p {
+    font-size: 14px;
+  }
+  margin-right: 20px;
 }
 
 .island-book {
   flex: 350px;
-  border: 1px solid #aaaaaa;
+  border: 1px solid #dddddd;
   height: 300px;
   margin-top: 15px;
 }
@@ -66,17 +71,21 @@
 }
 
 .island-titles {
-  flex: 70%;
+  flex: 80%;
 }
 
-.island-owner {
-  flex: 30%;
-  height: 150px;
+.island-owner-parent {
+  height: 50px;
+}
+
+.island-owner-child {
+  flex: 20%;
+  height: 100px;
   text-align: center;
-  line-height: 150px;
+  line-height: 100px;
   vertical-align: middle;
   h4 {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: thin;
   }
 }
