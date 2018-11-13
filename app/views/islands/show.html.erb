@@ -1,1 +1,30 @@
-<%= render "components/banner" %>
+<%= render 'photos' %>
+
+<div class="island-container">
+  <div class="island-wrapper">
+    <div class="island-info">
+      <div class="island-head">
+        <div class="island-titles">
+          <h3><%= @island.climate %></h3>
+          <h1><%= @island.name %></h1>
+          <h2><%= @island.location %></h2>
+        </div>
+        <div class="island-owner">
+          <img src=""/>[avatar]
+          <h4><%= @island.user.first_name %> <%= @island.user.last_name %></h4>
+        </div>
+      </div>
+      <div class="island-body">
+        <h5>Description</h5>
+        <p><%= @island.description %></p>
+      </div>
+      <div class="island-map">
+        <h5>Map</h5>
+        [img]
+      </div>
+    </div>
+    <div class="island-book">
+      [booking form]
+    </div>
+  </div>
+</div>
