@@ -9,8 +9,11 @@
           <h3><%= @island.climate %></h3>
           <h1><%= @island.name %></h1>
           <h2><%= @island.location %></h2>
+          <p><i class="fas fa-users"></i> <%= @island.capacity %><p>
         </div>
         <div class="island-owner">
+          <div class="island-owner-space">
+          </div>
           <%= image_tag("avatar-blank", class: "island-avatar") %>
           <h4><%= @island.user.first_name %> <%= @island.user.last_name %></h4>
         </div>
@@ -21,7 +24,8 @@
       </div>
       <div class="island-map">
         <h5>Map</h5>
-        [img]
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuQpVSocdlNpXVeLqygZwi-INoz2014qk&callback=initMap" async defer></script>
+        <%= render 'map' %>
       </div>
     </div>
     <div class="island-book">

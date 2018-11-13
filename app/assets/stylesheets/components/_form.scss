@@ -1,13 +1,20 @@
 .booking-container {
   padding: 20px;
+  font-size: 12px;
+  p {
+   font-weight: bold;
+   line-height: 4px;
+  }
 }
 
 .booking-info {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-  background-color: #eeeeee;
   padding: 10px;
+  margin-bottom: 20px;
+  border: 3px solid #94ca82;
+  color: #444444;
 }
 
 .booking-price-left {
@@ -21,7 +28,8 @@
 }
 
 .booking-form {
-  height: 140px;
+  height: 160px;
+  font-size: 12px;
 }
 
 .book-button {
@@ -32,4 +40,12 @@
   font-weight: bold;
   text-align: center;
   border: 0;
+  font-size: 16px;
+}
+
+.book-button:hover {
+  opacity: 0.9;
+}
+
+.datepicker {
 }

@@ -12,6 +12,7 @@ class IslandsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     authorize @island
   end
 
