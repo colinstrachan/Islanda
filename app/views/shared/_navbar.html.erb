@@ -31,7 +31,7 @@
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fas fa-arrow-left"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
           </ul>
@@ -49,10 +49,33 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+
+       <% if user_signed_in? %>
+
+      <!-- Links when logged in -->
+      <li><%= link_to  new_island_path do %>
+      <i class="fas fa-plus"></i> <%= t("Post Island") %>
+      <% end %> </li>
+
+
+       <li><%= link_to current_user do %>
+                <i class="fa fa-user"></i> <%= t("My Bookings") %>
+              <% end %></li>
+
+       <li>  <%= link_to "#" do %>
+                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+              <% end %> </li>
+       <li> <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fas fa-arrow-left"></i>  <%= t(".sign_out", default: "Log out") %></li>
+           <% end %>
+
+           <% else %>
+
+        <li><%= link_to t(".sign_in", default: "Log In"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+
       </ul>
+      <% end %>
     </div>
   </div>
 </div>

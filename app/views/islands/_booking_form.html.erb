@@ -1,0 +1,21 @@
+<div class="booking-container">
+  <div class="booking-info">
+    <div class="booking-price-left">
+      $<%= @island.price %>
+    </div>
+    <div class="booking-price-right">
+      /day
+    </div>
+  </div>
+  <div class="booking-form">
+    <div class="">
+      <%= simple_form_for(@island) do |f| %>
+      <%= f.text_field :start_date, required: true, value: "Start date" %>
+      <%= f.text_field :end_date, required: true, value: "End date" %>
+    </div>
+  </div>
+  <div class="booking-button">
+      <%= f.submit "Book Now", :class => "book-button" %>
+      <% end %>
+  </div>
+</div>
