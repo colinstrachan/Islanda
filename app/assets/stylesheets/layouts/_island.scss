@@ -1,39 +1,57 @@
 .island-container {
   width: 100%;
+  background-color: #afc2d5;
 }
 
 .photos-container {
   width: 100%;
   height: 500px;
-  border: 1px solid black;
+  background-color: #afc2d5;
+  text-align: center;
 }
 
 .island-wrapper {
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  width: 60%;
-  border: 1px solid black;
+  width: 1000px;
+  padding: 20px 40px 20px 40px;
 }
 
 .island-info {
-  flex: 70%;
-  border: 1px solid black;
+  flex: 650px;
+  h1 {
+    line-height: 20px;
+  }
   h5 {
     font-weight: bold;
+    font-size: 14px;
+  }
+  h3 {
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 16px;
+    color: #6b7daf;
+  }
+  h2 {
+    font-weight: thin;
+    font-size: 24px;
+    color: #aaaaaa;
   }
 }
 
 .island-book {
-  flex: 30%;
-  border: 1px solid black;
+  flex: 350px;
+  border: 1px solid #aaaaaa;
   height: 300px;
+  margin-top: 15px;
 }
 
 .island-map {
+  margin-top: 30px;
   flex: 1 1 auto;
-  border: 1px solid black;
 }
 
 .island-head {
@@ -41,20 +59,31 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  border: 1px solid black;
 }
 
 .island-body {
-  border: 1px solid black;
+  margin-top: 30px;
 }
 
 .island-titles {
   flex: 70%;
-  border: 1px solid black;
 }
 
 .island-owner {
   flex: 30%;
-  height: 200px;
-  border: 1px solid black;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  vertical-align: middle;
+  h4 {
+    font-size: 16px;
+    font-weight: thin;
+  }
+}
+
+.island-avatar {
+  height: 100px;
+  width: 100px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
 }
