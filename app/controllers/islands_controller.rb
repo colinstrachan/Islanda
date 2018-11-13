@@ -15,8 +15,9 @@ class IslandsController < ApplicationController
   end
 
   def create
-    Island.create(islands_params)
-    redirect to islands_path
+    @island = Island.new(islands_params)
+    @island.user = current_user
+    redirect_to island_path(@island) if @island.save
     authorize @island
   end
 
