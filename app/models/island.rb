@@ -7,5 +7,4 @@ class Island < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :capacity, presence: true
-  belongs_to :user
 end
