@@ -6,29 +6,32 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Starting seeding..."
-test_user = User.new(first_name: 'Colin', last_name: 'Strachan', email: 'shopping@strachanmusic.com', password: '0123456789')
-test_user.save!
-puts "colin saved" if test_user.save == true
+puts "Starting seeding process!"
 
-hawai = Island.new(name: 'guillo', description: "dd", price: 5, capacity: 4, climate: "gg", user: test_user, location: "pacific", remote_photo_url: "https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-hawai.save!
-puts "hawai saved" if hawai.save == true
+puts "Destroy all elements in database..."
 
-inagua = Island.new(name: 'Bahamas', description: "very nice place", price: 2000, capacity: 25, climate: "sunny", user: test_user, location: "Inagua National Park", remote_photo_url: "https://images.pexels.com/photos/1236504/pexels-photo-1236504.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")
-inagua.save!
-puts "inagua saved" if inagua.save == true
+Booking.destroy_all
+Island.destroy_all
+User.destroy_all
 
-cotton = Island.new(name: 'Cotton', description: "the best place of the world", price: 3000, capacity: 100, climate: "high temperatures", user: test_user, location: "Cotton Cay", remote_photo_url: "https://images.pexels.com/photos/870711/pexels-photo-870711.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")
-cotton.save!
-puts "cotton saved" if cotton.save == true
+puts "Start creating new seeds"
 
-lehua = Island.new(name: 'Lehua-hawai', description: "the best place of the pacific", price: 4000, capacity: 100, climate: "high temperatures", user: test_user, location: "Lehua", remote_photo_url: "https://images.pexels.com/photos/247447/pexels-photo-247447.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-lehua.save!
-puts "lehua saved" if lehua.save == true
+test_usert = User.new(first_name: 'Colint', last_name: 'Strachant', email: 'shopping@stratchanmusic.com', password: '0123456789')
+test_usert.save!
 
-fare = Island.new(name: 'fare', description: "incredible place", price: 6000, capacity: 50, climate: "high temperatures", user: test_user, location: "fare", remote_photo_url: "https://images.pexels.com/photos/532860/pexels-photo-532860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-fare.save!
-puts "fare saved" if fare.save == true
+hawai2 = Island.new(name: 'guillot', description: "dd", price: 5, capacity: 4, climate: "gg", user: test_usert, location: "pacifict", remote_photo_url: "https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+hawai2.save!
+
+inagua2 = Island.new(name: 'Bahamast', description: "very nice place", price: 2000, capacity: 25, climate: "sunny", user: test_usert, location: "Inagua National Parkt", remote_photo_url: "https://images.pexels.com/photos/1236504/pexels-photo-1236504.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")
+inagua2.save!
+
+cotton2 = Island.new(name: 'Cottont', description: "the best place of the world", price: 3000, capacity: 100, climate: "high temperatures", user: test_usert, location: "Cotton Cayt", remote_photo_url: "https://images.pexels.com/photos/870711/pexels-photo-870711.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")
+cotton2.save!
+
+lehua2 = Island.new(name: 'Lehua-hawait', description: "the best place of the pacific", price: 4000, capacity: 100, climate: "high temperatures", user: test_usert, location: "Lehuat", remote_photo_url: "https://images.pexels.com/photos/247447/pexels-photo-247447.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+lehua2.save!
+
+fare2 = Island.new(name: 'faret', description: "incredible place", price: 6000, capacity: 50, climate: "high temperatures", user: test_usert, location: "faret", remote_photo_url: "https://images.pexels.com/photos/532860/pexels-photo-532860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+fare2.save!
 
 puts "Seeding completed."
