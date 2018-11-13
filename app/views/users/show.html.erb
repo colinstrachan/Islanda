@@ -1,2 +1,20 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<p>Avatar soon...</p>
+<h1><%= current_user.first_name %></h1>
+<p>We are glad to see you here again!</p>
+
+<h3>My Islands</h3>
+
+<% islands = Island.where(user_id: current_user.id) %>
+<% islands.each do |i| %>
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path i.photo, height: 300, width: 400, crop: :fill %>')">
+  <div class="card-category"><%= i.name %></div>
+  <div class="card-description">
+    <h2><%= i.location %></h2>
+    <p><%= i.description %></p>
+  </div>
+  <img class="card-user" src="<%= cl_image_path i.photo %>">
+  <a class="card-link" href="#" ></a>
+</div>
+
+<% end %>
