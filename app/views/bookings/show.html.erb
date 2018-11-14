@@ -6,7 +6,13 @@
     <h3>Check-in: <b><%= @booking.start_date %></b></h3>
     <h3>Check-out: <b><%= @booking.end_date %></b></h3>
     <h4>Total cost: <b>$<%= (@booking.island.price * (@booking.end_date - @booking.start_date)) %></b></h4>
+
+
+    <%= link_to islands_path do%>
     <div class="confirm-button-blue" style="margin-bottom: 5px">Print This Receipt</div>
+    <% end %>
+    <%= link_to user_bookings_path(current_user) do%>
     <div class="confirm-button-grey">See My Bookings</div>
+    <% end %>
   </div>
 </div>
