@@ -6,7 +6,6 @@ class IslandsController < ApplicationController
     @islands = policy_scope(Island).order(created_at: :desc)
 
     @map_islands = Island.where.not(latitude: nil, longitude: nil)
-raise
     @markers = @map_islands.map do |island|
       {
         lng: island.longitude,
