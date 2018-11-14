@@ -19,6 +19,7 @@ class IslandsController < ApplicationController
     @island = Island.new(islands_params)
     @island.user = current_user
     redirect_to island_path(@island) if @island.save
+    render :new if @island.save == false
     authorize @island
   end
 

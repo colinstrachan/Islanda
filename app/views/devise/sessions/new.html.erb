@@ -2,6 +2,7 @@
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
+    <div class="signup-container" style="width:50%; padding: 20px">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
@@ -10,6 +11,7 @@
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
   </div>
 
   <div class="form-actions">
