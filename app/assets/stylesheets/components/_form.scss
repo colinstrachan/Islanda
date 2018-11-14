@@ -77,19 +77,21 @@
 }
 
 .manage-form {
-  height: 160px;
+  height: 25px;
   font-size: 12px;
+  margin-top: 100px;
 }
 
 .manage-button {
   width: 100%;
-  background-color: #6b7daf;
-  height: 50px;
+  background-color: #aaaaaa;
+  padding: 10px;
   color: white;
   font-weight: bold;
   text-align: center;
   border: 0;
   font-size: 16px;
+  margin-top: 20px;
 }
 
 .manage-button:hover {

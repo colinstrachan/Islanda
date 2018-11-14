@@ -9,9 +9,8 @@
     </div>
   </div>
   <div class="manage-form">
-    manage form
+    <b>Manage Your Island</b>
   </div>
-  <div class="manage-button">
-    buttons
-  </div>
+  <%= link_to "Edit Island", edit_island_path(@island), :class => "manage-button" %><br/>
+  <%= link_to "Delete Island", island_path(@island), :class => "manage-button", method: :delete, data: { confirm: "Are you sure?" } %>
 </div>
