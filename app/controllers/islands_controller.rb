@@ -25,7 +25,6 @@ raise
 
   def show
     @booking = Booking.new
-    authorize @island
   end
 
   def create
@@ -45,6 +44,7 @@ raise
 
   def destroy
     @island.destroy
+    redirect_to islands_path
   end
 
   private
@@ -55,5 +55,6 @@ raise
 
   def set_islands
     @island = Island.find(params[:id])
+    authorize @island
   end
 end
