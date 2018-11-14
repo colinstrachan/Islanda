@@ -35,3 +35,5 @@ fare2 = Island.new(name: 'faret', description: "incredible place", price: 6000, 
 fare2.save!
 
 puts "Seeding completed."
+
+fear = Island.new(name: 'farest', description: "incredible place", price: 6000, capacity: 50, climate: "high temperaturess", user: test_usert, location: "hawai", remote_photo_url: "https://images.pexels.com/photos/532860/pexels-photo-532860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
