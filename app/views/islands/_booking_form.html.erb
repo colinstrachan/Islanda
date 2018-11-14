@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="booking-form">
-    <%= simple_form_for [@island, @booking], method: "get" do |f| %>
+    <%= simple_form_for [@island, @booking] do |f| %>
     <%= f.input :start_date, label: "Check In", as: :string, required: false, input_html: {class: "datepicker"} %>
     <%= f.input :end_date, label: "Check Out", as: :string, required: false, input_html: {class: "datepicker"} %>
   </div>
