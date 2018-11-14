@@ -1,5 +1,5 @@
 <div class="photos-container">
-  <%= render 'photos' %>
+  <%= render 'islands/photos' %>
 </div>
 <div class="island-container">
   <div class="island-wrapper">
@@ -29,14 +29,14 @@
       <div class="island-map">
         <h5>Map</h5>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuQpVSocdlNpXVeLqygZwi-INoz2014qk&callback=initMap" async defer></script>
-        <%= render 'map' %>
+        <%= render 'islands/map' %>
       </div>
     </div>
     <div class="island-book">
       <% if @island.user == current_user %>
-        <%= render 'manage_form' %>
+        <%= render 'islands/manage_form' %>
       <% else %>
-        <%= render 'booking_form' %>
+        <%= render 'islands/booking_form' %>
       <% end %>
     </div>
   </div>

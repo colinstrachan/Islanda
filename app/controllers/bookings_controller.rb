@@ -22,6 +22,8 @@ before_action :set_islands, only: [:new, :create]
     @booking.user = current_user
     @booking.save
     redirect_to booking_path(@booking) if @booking.save
+    flash[:error] = "The dates of your booking are invalid." if @booking.save == false
+    render("islands/show", island: @island) if @booking.save == false
     authorize @booking
   end
 

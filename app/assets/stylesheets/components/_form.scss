@@ -54,6 +54,9 @@
    font-weight: bold;
    line-height: 4px;
   }
+  a {
+    text-decoration: none;
+  }
 }
 
 .manage-info {
@@ -84,14 +87,14 @@
 
 .manage-button {
   width: 100%;
-  background-color: #aaaaaa;
+  background-color: #888888;
   padding: 10px;
   color: white;
   font-weight: bold;
   text-align: center;
   border: 0;
   font-size: 16px;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .manage-button:hover {
