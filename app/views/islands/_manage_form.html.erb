@@ -1,0 +1,16 @@
+<div class="manage-container">
+  <p>Price</p>
+  <div class="manage-info">
+    <div class="manage-price-left">
+      $<%= @island.price %>
+    </div>
+    <div class="manage-price-right">
+      /day
+    </div>
+  </div>
+  <div class="manage-form">
+    <b>Manage Your Island</b>
+  </div>
+  <%= link_to "Edit Island", edit_island_path(@island), :class => "manage-button" %><br/>
+  <%= link_to "Delete Island", island_path(@island), :class => "manage-button", method: :delete, data: { confirm: "Are you sure?" } %>
+</div>

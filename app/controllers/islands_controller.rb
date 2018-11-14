@@ -13,7 +13,6 @@ class IslandsController < ApplicationController
 
   def show
     @booking = Booking.new
-    authorize @island
   end
 
   def create
@@ -33,6 +32,7 @@ class IslandsController < ApplicationController
 
   def destroy
     @island.destroy
+    redirect_to islands_path
   end
 
   private
@@ -43,5 +43,6 @@ class IslandsController < ApplicationController
 
   def set_islands
     @island = Island.find(params[:id])
+    authorize @island
   end
 end
