@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_islands, only: [:create, :new]
+before_action :set_islands, only: [:new, :create]
 
   def index
     @bookings = policy_scope(Booking).order(created_at: :desc)
@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.island = @island
+    @booking.user = current_user
     @booking.save
     redirect_to booking_path(@booking) if @booking.save
     authorize @booking
