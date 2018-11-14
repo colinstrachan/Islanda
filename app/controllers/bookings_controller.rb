@@ -17,8 +17,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
     @booking.island = @island
     @booking.save
+    redirect_to booking_path(@booking) if @booking.save
     authorize @booking
   end
 
