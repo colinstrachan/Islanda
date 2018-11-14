@@ -29,7 +29,11 @@
       </div>
     </div>
     <div class="island-book">
-      <%= render 'booking_form' %>
+      <% if @island.user == current_user %>
+        <%= render 'manage_form' %>
+      <% else %>
+        <%= render 'booking_form' %>
+      <% end %>
     </div>
   </div>
 </div>

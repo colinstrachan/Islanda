@@ -47,5 +47,58 @@
   opacity: 0.9;
 }
 
+.manage-container {
+  padding: 20px;
+  font-size: 12px;
+  p {
+   font-weight: bold;
+   line-height: 4px;
+  }
+}
+
+.manage-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 3px solid #94ca82;
+  color: #444444;
+}
+
+.manage-price-left {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.manage-price-right {
+  font-size: 16px;
+  font-weight: thin;
+}
+
+.manage-form {
+  height: 160px;
+  font-size: 12px;
+}
+
+.manage-button {
+  width: 100%;
+  background-color: #6b7daf;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: 0;
+  font-size: 16px;
+}
+
+.manage-button:hover {
+  opacity: 0.9;
+}
+
+.datepicker {
+}
+
+
 .datepicker {
 }
