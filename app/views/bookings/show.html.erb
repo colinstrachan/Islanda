@@ -5,7 +5,7 @@
     <h2>You're going to <b><%= @booking.island.name %></b> — oh, yeah!</h2>
     <h3>Check-in: <b><%= @booking.start_date %></b></h3>
     <h3>Check-out: <b><%= @booking.end_date %></b></h3>
-    <h4>Total cost: <b>$<%= (@booking.island.price * (@booking.end_date - @booking.start_date)) %></b></h4>
+    <h4>Total cost: <b>$<%= (@booking.island.price * (@booking.end_date - @booking.start_date)).to_i %></b></h4>
 
 
     <%= link_to islands_path do%>
