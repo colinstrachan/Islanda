@@ -5,10 +5,6 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
-  def index?
-    return true
-  end
-
   def show?
     return true
   end
@@ -21,7 +17,7 @@ class BookingPolicy < ApplicationPolicy
     record.user == user
   end
 
-  def destroy
+  def destroy?
     record.user == user
   end
 end

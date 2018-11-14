@@ -1,0 +1,18 @@
+<h1>My bookings</h1>
+
+<div class="container">
+  <div class="row">
+    <% @bookings.each do |book| %>
+    <div class="col-xs-12 col-sm-4">
+     <%= link_to island_path(book) do %>
+     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('<%= cl_image_path book.island.photo, crop: :fill %>')">
+      <div class="card-category"><%= book.island.name %></div>
+      <div class="card-description">
+        <h4 style="text-align: left">Check In: <%= book.start_date %></h4>
+        <h4 style="text-align: left">Check Out: <%= book.end_date %></h4>
+      </div>
+    </div>
+      <% end %>
+  </div>
+  <% end %>
+</div>
