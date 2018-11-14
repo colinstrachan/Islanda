@@ -11,6 +11,15 @@
   <div class="manage-form">
     <b>Manage Your Island</b>
   </div>
-  <%= link_to "Edit Island", edit_island_path(@island), :class => "manage-button" %><br/>
-  <%= link_to "Delete Island", island_path(@island), :class => "manage-button", method: :delete, data: { confirm: "Are you sure?" } %>
+
+  <%= link_to edit_island_path(@island) do%>
+    <div class="manage-button">
+      Edit Island
+    </div>
+  <% end %>
+  <%= link_to island_path(@island), method: :delete, data: { confirm: "Are you sure?" } do %>
+  <div class="manage-button">
+    Delete Island
+  </div>
+  <% end %>
 </div>

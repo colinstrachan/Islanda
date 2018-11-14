@@ -3,8 +3,19 @@ class IslandsController < ApplicationController
   before_action :set_islands, only: [:show, :edit, :update, :destroy]
 
   def index
-    @islands = Island.all
+
     @islands = policy_scope(Island).order(created_at: :desc)
+
+    @map_islands = Island.where.not(latitude: nil, longitude: nil)
+    @markers = @map_islands.map do |island|
+      {
+        lng: island.longitude,
+        lat: island.latitude,
+        infoWindow: { content: render_to_string(partial: "/islands/map_window", locals: { island: island }) }
+
+      }
+    end
+
   end
 
   def new
@@ -20,6 +31,7 @@ class IslandsController < ApplicationController
     @island = Island.new(islands_params)
     @island.user = current_user
     redirect_to island_path(@island) if @island.save
+    render :new if @island.save == false
     authorize @island
   end
 
