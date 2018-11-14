@@ -11,16 +11,19 @@
 <div class="container">
   <div class="row">
     <% @islands.each do |i| %>
-    <div class="col-xs-12 col-sm-4">
-     <%= link_to island_path(i) do %>
-     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path i.photo, crop: :fill %>')">
-      <div class="card-category"><%= i.name %></div>
-      <div class="card-description">
-        <h2><%= i.location %></h2>
-        <p><%= i.description %></p>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to island_path(i) do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path i.photo, crop: :fill %>')">
+            <div class="card-category">
+              <%= i.name %>
+            </div>
+            <div class="card-description">
+              <h2><%= i.location %></h2>
+              <p><%= i.description %></p>
+            </div>
+          </div>
+        <% end %>
       </div>
-    </div>
-      <% end %>
+    <% end %>
   </div>
-  <% end %>
 </div>
