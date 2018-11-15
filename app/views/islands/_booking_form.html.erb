@@ -16,4 +16,5 @@
       <%= f.submit "Book Now", :class => "book-button" %>
       <% end %>
   </div>
+  <%= tag("div", data: { bookeddates: @booked_dates } , id: "booked_dates") %>
 </div>
