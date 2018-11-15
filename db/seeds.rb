@@ -39,11 +39,11 @@ fiji.save!
 maldives = Island.new(name: 'Maldives', description: "The best place of the 7 seas", price: 4000, capacity: 100, climate: "Arctic", user: markus, location: "maldives", remote_photo_url: "https://images.pexels.com/photos/247447/pexels-photo-247447.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
 maldives.save!
 
-srilanka = Island.new(name: 'Sri Lanka', description: "Incredible place in South Asia", price: 6000, capacity: 50, climate: "Temperate", user: bob, location: "sri lanka", remote_photo_url: "https://images.pexels.com/photos/532860/pexels-photo-532860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+srilanka = Island.new(name: 'Sri Lanka', description: "Incredible place in South Asia", price: 6000, capacity: 50, climate: "Desert", user: bob, location: "sri lanka", remote_photo_url: "https://images.pexels.com/photos/532860/pexels-photo-532860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
 srilanka.save!
 
-15.times do 
-  
+15.times do
+
   start_date = Date.today + rand(15..60)
   end_date = start_date + rand(15..120)
   island = [hawaii, maui, fiji, maldives, srilanka].sample
