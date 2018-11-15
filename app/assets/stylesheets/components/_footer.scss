@@ -1,0 +1,35 @@
+.footer {
+   background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: black;
+  opacity: 0.5;
+
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  color: black;
+  opacity: 0.4;
+
+}
+
+.footer-copyright {
+  font-size: 13px;
+  ul {
+  text-decoration: none;
+
+  }
+}
