@@ -1,0 +1,22 @@
+<% 
+  bookings_active = ""
+  my_islands_active = ""
+
+  if current_page?(user_bookings_path(current_user))
+    bookings_active = "active"
+  elsif current_page?(user_path(current_user))
+    my_islands_active = "active"
+  end
+%>
+
+<div class="tabs">
+  <a class="tab <%= bookings_active %>" href="<%= user_bookings_path(current_user) %>">
+    <h3>My bookings</h3>
+  </a>
+  <a class="tab <%= my_islands_active %>" href="<%= user_path(current_user) %>">
+    <h3>My islands</h3>
+  </a>
+  <a class="tab" href="#">
+    <h3>Reviews</h3>
+  </a>
+</div>

@@ -12,10 +12,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 
 gem "geocoder"
-
-
 gem 'rest-client', '>= 2.0.2'
-
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
