@@ -1,4 +1,5 @@
 <div class="wrapper" style="background-image: url('https://si.wsj.net/public/resources/images/BN-LL243_ISLAND_M_20151125120156.jpg');">
+<div class="wrapper">
     <div class="form-container">
         <%= simple_form_for(@island) do |f| %>
         <%= f.error_notification %>
@@ -16,7 +17,7 @@
           <%= f.input :photo_cache, as: :hidden %>
     <!-- [...] -->
           <div class="form-actions">
-            <%= f.button :submit, "Create island", class: 'btn-primary btn-lg' %>
+            <%= f.button :submit, "Create island", class: 'search-button' %>
           </div>
         </div>
       </div>
@@ -24,4 +25,4 @@
       <% end %>
     </div>
 </div>
-
+</div>
