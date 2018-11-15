@@ -6,7 +6,7 @@
         <div class="signup-container" style="width:100%; padding: 20px">
   <!-- [...] -->
           <%= f.input :name, required: true, value: @island.name %>
-          <%= f.input :location, required: true, value: @island.location %>
+          <%= f.input :location, required: true, id: "island_location", value: @island.location %>
           <%= f.input :climate, required: true, value: @island.climate %>
           <%= f.input :price, required: true, value: @island.price %>
           <%= f.input :capacity, required: true, value: @island.capacity %>
