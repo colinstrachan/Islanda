@@ -1,5 +1,9 @@
 import 'mapbox-gl/dist/mapbox-gl.css'
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
+
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+
 
 const mapElement = document.getElementById('map');
 
@@ -7,9 +11,12 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   mapboxgl.accessToken = process.env.MAPBOX_API_KEY; // API key from `.env`
   const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/guillo16/cjoin6s643t1y2so0ilj48r52'
 
 });
+  map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+  }));
   const markers = JSON.parse(mapElement.dataset.markers);
 
   markers.forEach((marker) => {
@@ -32,3 +39,14 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     map.fitBounds(bounds, { duration: 0, padding: 75 })
   }
 }
+
+const locationInput = document.getElementById('island_location');
+
+if (locationInput) {
+  const places = require('places.js');
+  const placesAutocomplete = places({
+    container: locationInput
+  });
+}
+
+
