@@ -1,0 +1,11 @@
+<div class="search-container">
+  <div class="search-form">
+    <%= simple_form_for :search,  url: islands_path, :method => :get do |f| %>
+    <%= f.input :location, label: "Where?", input_html: {placeholder: 'Anywhere'}, :autofocus => true %>
+    <%= f.input :daterange, label: "When?", as: :string, required: false, input_html: {class: "datepicker"} %>
+  </div>
+  <div class="search-button">
+    <%= f.submit "Find An Island", :class => "search-button" %>
+    <% end %>
+  </div>
+</div>

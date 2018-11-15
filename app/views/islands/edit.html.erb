@@ -7,7 +7,7 @@
   <!-- [...] -->
           <%= f.input :name, required: true, value: @island.name %>
           <%= f.input :location, required: true, id: "island_location", value: @island.location %>
-          <%= f.input :climate, required: true, value: @island.climate %>
+          <%= f.input :climate, required: true, :collection => ["Tropical Dry", "Tropical Wet", "Temperate", "Desert", "Arctic"] %>
           <%= f.input :price, required: true, value: @island.price %>
           <%= f.input :capacity, required: true, value: @island.capacity %>
           <%= f.input :description, required: true, value: @island.description %>
