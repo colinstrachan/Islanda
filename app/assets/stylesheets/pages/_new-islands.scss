@@ -2,7 +2,7 @@
 .wrapper {
   color: white;
   text-align: center;
-  height: 100vh;
+  height: 80%;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -11,6 +11,8 @@
 }
 
 .form-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 4px;
 
