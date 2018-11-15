@@ -16,4 +16,11 @@ class Island < ApplicationRecord
     booked_ids = booked.map { |f| f.id }
     self.where("location ILIKE ?", "%#{location}%").where.not(id: booked_ids)
   end
+
+  def available?(requested_start_date, requested_end_date)
+    bookings.each do |booking|
+      return false if booking.start_date <= requested_end_date && requested_start_date <= booking.end_date
+    end
+    return true
+  end
 end
