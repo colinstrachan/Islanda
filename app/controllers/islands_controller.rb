@@ -1,5 +1,5 @@
 class IslandsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :search]
   before_action :set_islands, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -16,6 +16,13 @@ class IslandsController < ApplicationController
       }
     end
 
+  end
+
+  def search
+    # @islands = policy_scope(Island).order(created_at: :desc)
+    search_start = params[:search][:daterange].split(" to ").first
+    search_end = params[:search][:daterange].split(" to ").last
+    @islands = Island.available?(search_start, search_end)
   end
 
   def new
