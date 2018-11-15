@@ -19,10 +19,10 @@ class IslandsController < ApplicationController
   end
 
   def search
-    # @islands = policy_scope(Island).order(created_at: :desc)
     search_start = params[:search][:daterange].split(" to ").first
     search_end = params[:search][:daterange].split(" to ").last
-    @islands = Island.available?(search_start, search_end)
+    search_location = params[:search][:location]
+    @islands = policy_scope(Island).available?(search_start, search_end, search_location).order(created_at: :desc)
   end
 
   def new
