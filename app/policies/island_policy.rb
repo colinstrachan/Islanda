@@ -5,6 +5,10 @@ class IslandPolicy < ApplicationPolicy
     end
   end
 
+  def search?
+    true
+  end
+
   def show?
     return true
   end
