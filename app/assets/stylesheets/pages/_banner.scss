@@ -5,8 +5,9 @@
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
   h1 {
     font-size: 50px;
     font-weight: bold;
