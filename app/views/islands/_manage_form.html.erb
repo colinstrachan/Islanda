@@ -13,12 +13,12 @@
   </div>
 
   <%= link_to edit_island_path(@island) do%>
-    <div class="manage-button">
+    <div class="manage-button-blue">
       Edit Island
     </div>
   <% end %>
   <%= link_to island_path(@island), method: :delete, data: { confirm: "Are you sure?" } do %>
-  <div class="manage-button">
+  <div class="manage-button-grey">
     Delete Island
   </div>
   <% end %>

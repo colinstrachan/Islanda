@@ -32,6 +32,12 @@ class IslandsController < ApplicationController
 
   def show
     @booking = Booking.new
+
+    @booked_dates = []
+    @island.bookings.each do |booking|
+      @booked_dates << { from: booking.start_date, to: booking.end_date }
+    end
+
   end
 
   def create
