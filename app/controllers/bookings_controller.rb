@@ -16,15 +16,25 @@ before_action :set_islands, only: [:new, :create]
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.user = current_user
+    @booking = Booking.new
+    requested_date_range = params[:booking][:start_date].split(" to ")
+    requested_start_date = requested_date_range.first.to_date
+    requested_end_date = requested_date_range.last.to_date
     @booking.island = @island
     @booking.user = current_user
-    @booking.save
-    redirect_to booking_path(@booking) if @booking.save
-    flash[:error] = "The dates of your booking are invalid." if @booking.save == false
-    render("islands/show", island: @island) if @booking.save == false
-    authorize @booking
+    if @island.available?(requested_start_date, requested_end_date)
+      @booking.start_date = requested_start_date
+      @booking.end_date = requested_end_date
+      @booking.save
+      redirect_to booking_path(@booking) if @booking.save
+      render("islands/show", island: @island) if @booking.save == false
+      flash[:error] = "The dates of your booking are invalid." if @booking.save == false
+      authorize @booking
+    else
+      render("islands/show", island: @island)
+      flash[:error] = "The island is not available on these dates."
+      authorize @booking
+    end
   end
 
   def destroy
