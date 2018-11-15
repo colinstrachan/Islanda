@@ -1,7 +1,7 @@
 .tabs {
   background: #afc2d5;
   display: flex;
-  padding: 15px 15px 0 15px
+  padding: 25px 25px 0px 25px;
 }
 .tabs a {
   color: white;
@@ -12,7 +12,7 @@
   opacity: 0.8;
 }
 .tabs h3 {
-  font-size: 25px;
+  font-size: 20px;
   margin-top: 10px;
 }
 .tabs p {
@@ -21,9 +21,10 @@
 }
 .tab {
   background: #6b7daf;
-  flex: 1 1 auto;
+  width: 200px;
+  flex: 0 0 auto;
   text-align: center;
-  padding: 20px 0;
+  padding: 0 10px 0 10px;
 }
 .tab:first-child {
   border-radius: 10px 0 0 0;
