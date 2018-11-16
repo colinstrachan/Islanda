@@ -19,6 +19,12 @@
       <div class="card-description">
         <h2><%= i.location.capitalize %></h2>
         <p><%= i.description %></p>
+        <% i.average.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <% (5 - i.average).times do %>
+          <i class="far fa-star"></i>
+        <% end %>
       </div>
     </div>
     <% end %>
