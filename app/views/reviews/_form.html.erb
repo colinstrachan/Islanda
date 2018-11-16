@@ -1,0 +1,6 @@
+
+<%= simple_form_for([ island, review ]) do |form| %>
+  <%= form.input :description, as: :text %>
+  <%= form.input :rating, as: :integer %>
+  <%= form.button :submit %>
+<% end %>

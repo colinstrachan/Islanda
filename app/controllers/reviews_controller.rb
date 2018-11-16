@@ -21,7 +21,8 @@ class ReviewsController < ApplicationController
     @review.save
     redirect_to island_path(@island) if @island.save
     render :new if @island.save == false
-    authorize @island
+    authorize @review
+
   end
 
   def destroy
@@ -36,6 +37,6 @@ private
   end
 
   def review_params
-    params.require(:booking).permit(:description, :rating)
+    params.require(:review).permit(:description, :rating)
   end
 end
