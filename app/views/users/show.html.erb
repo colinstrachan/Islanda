@@ -1,28 +1,22 @@
 <%= render "components/tab" %>
-
-<div class="container" style="text-align: center">
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3 style="text-align: center">My Islands</h3>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <% @islands.each do |i| %>
+<div class="show-container">
+  <div class="container show-wrapper">
+    <div class="row justify-content-center">
+      <% @islands.each do |i| %>
       <div class="col-xs-12 col-sm-4">
         <%= link_to island_path(i) do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path i.photo, crop: :fill %>')">
-            <div class="card-category">
-              <%= i.name %>
-            </div>
-            <div class="card-description">
-              <h2><%= i.location %></h2>
-              <p><%= i.description %></p>
-            </div>
+        <div class="card" style="background-image: linear-gradient( 90deg, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('<%= cl_image_path i.photo, crop: :fill %>')">
+          <div class="card-category">
+            <%= i.name %>
           </div>
+          <div class="card-description">
+            <h2><%= i.location %></h2>
+            <p><%= i.description %></p>
+          </div>
+        </div>
         <% end %>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
