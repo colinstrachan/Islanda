@@ -1,6 +1,6 @@
 <div class="map-window">
-  <h5><%=  island.name %></h6>
-  <h6>(<%= island.location %>)</h6>
+  <h5><%=  island.name.truncate_words(6) %></h6>
+  <h6>(<%= island.location.truncate_words(3) %>)</h6>
   <%= link_to island_path(island) do %>
   <div class="map-window-button">
     See This Island
