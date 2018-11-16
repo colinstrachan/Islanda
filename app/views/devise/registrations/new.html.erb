@@ -1,39 +1,32 @@
-<div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-      <h2 class='text-center'>Sign up</h2>
+<div class="wrapper" style="background-image: url('https://si.wsj.net/public/resources/images/BN-LL243_ISLAND_M_20151125120156.jpg'); height: 90vh">
+  <div class="wrapper">
+    <div class="form-container" style="margin-top: 70px" >
+      <h3 style='text-align: center'>Sign up</h3>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-          <div class="form-inputs">
-            <div class="signup-container text-center" style="width: 50%; padding: 20px; margin: 0 auto;">
-              <%= f.input :first_name, required: true %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <div class="signup-container" style="width: 100%; padding: 20px">
+          <%= f.input :first_name, required: true %>
 
-              <%= f.input :last_name, required: true %>
+          <%= f.input :last_name, required: true %>
 
-              <%= f.input :email,
-              required: true,
-              autofocus: true ,
-              input_html: { autocomplete: "email" }%>
-              <%= f.input :password,
-              required: true,
-              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-              input_html: { autocomplete: "new-password" } %>
-              <%= f.input :password_confirmation,
-              required: true,
-              input_html: { autocomplete: "new-password" } %>
-              <%= f.input :photo %>
-              <%= f.input :photo_cache, as: :hidden %>
-            </div>
-          </div>
-          <div class="form-actions text-center" style="width: 50%; margin: 0 auto;">
-            <%= f.button :submit, "Sign up" %>
-          </div>
-        <% end %>
+          <%= f.input :email,
+          required: true,
+          autofocus: true ,
+          input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+          required: true,
+          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+          input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+          required: true,
+          input_html: { autocomplete: "new-password" } %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit, "Sign up", class: 'search-button'%>
         <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-        <div class='text-center' style="width: 50%; padding: 20px; margin: 0 auto;">
-          <%= render "devise/shared/links" %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
