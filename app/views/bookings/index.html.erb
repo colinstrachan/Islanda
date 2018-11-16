@@ -9,6 +9,7 @@
         <th>Location</th>
         <th>Check In</th>
         <th>Check Out</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +19,7 @@
           elsif book.start_date >= Date.today && book.end_date >= Date.today
             value = "info"
           else
-            value = "success"   
+            value = "success"
           end %>
           <tr class= <%="#{value}" %>>
             <td><%= book.island.name %></td>
@@ -26,6 +27,10 @@
             <td><%= book.island.location.capitalize %></td>
             <td><%= book.start_date %></td>
             <td><%= book.end_date %></td>
+            <td width="150"><%= link_to booking_path(book), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <div class="cancel-booking-button">Cancel booking</div>
+              <% end %>
+            </td>
           </tr>
       <% end %>
     </tbody>

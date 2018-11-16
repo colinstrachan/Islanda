@@ -36,11 +36,11 @@ before_action :set_islands, only: [:new, :create]
         @booking.save
         redirect_to booking_path(@booking) if @booking.save
         redirect_to island_path(@island) if @booking.save == false
-        flash[:error] = "The dates of your booking are invalid." if @booking.save == false
+        flash[:alert] = "The dates of your booking are invalid." if @booking.save == false
         authorize @booking
       else
         redirect_to island_path(@island)
-        flash[:error] = "The island is not available on these dates."
+        flash[:alert] = "The island is not available on these dates."
         authorize @booking
       end
       authorize @booking
@@ -51,6 +51,9 @@ before_action :set_islands, only: [:new, :create]
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+    redirect_to user_bookings_path(current_user)
+    flash[:notice] = "Your booking has been cancelled.  We have notified the island owner."
+    authorize @booking
   end
 
   private
