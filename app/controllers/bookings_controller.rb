@@ -18,7 +18,7 @@ before_action :set_islands, only: [:new, :create]
   def create
     @booking = Booking.new
     if params[:booking][:start_date] == "" || params[:booking][:start_date].nil?
-      render("islands/show", island: @island)
+      redirect_to island_path(@island)
     else
       if !params[:booking][:start_date].include?("to")
         requested_start_date = params[:booking][:start_date].to_date
@@ -33,14 +33,13 @@ before_action :set_islands, only: [:new, :create]
       if @island.available?(requested_start_date, requested_end_date)
         @booking.start_date = requested_start_date
         @booking.end_date = requested_end_date
-        raise
         @booking.save
         redirect_to booking_path(@booking) if @booking.save
-        render("islands/show", island: @island) if @booking.save == false
+        redirect_to island_path(@island) if @booking.save == false
         flash[:error] = "The dates of your booking are invalid." if @booking.save == false
         authorize @booking
       else
-        render("islands/show", island: @island)
+        redirect_to island_path(@island)
         flash[:error] = "The island is not available on these dates."
         authorize @booking
       end
