@@ -112,3 +112,28 @@
 #reviews {
   margin-top: 30px;
 }
+
+.map-window {
+  h5 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 10px;
+  }
+  h6 {
+    font-size: 12px;
+    font-weight: thin;
+  }
+}
+
+.map-window-button {
+  border: 1px solid #6b7daf;
+  background-color: #6b7daf;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  font-weight: thin;
+  width: 100px;
+  text-align: center;
+  &:hover {
+  opacity: 0.9;
+  }
+}
