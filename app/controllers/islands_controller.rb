@@ -36,6 +36,7 @@ class IslandsController < ApplicationController
     @booked_dates = []
     @island.bookings.each do |booking|
       @booked_dates << { from: booking.start_date, to: booking.end_date }
+      @review = Review.new
     end
 
   end

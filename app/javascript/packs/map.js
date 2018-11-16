@@ -20,7 +20,13 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   const markers = JSON.parse(mapElement.dataset.markers);
 
   markers.forEach((marker) => {
-    new mapboxgl.Marker()
+    const el = document.createElement('div');
+    el.className = 'marker';
+    el.style.backgroundImage = 'url(https://res.cloudinary.com/astridbosch/image/upload/v1542376497/mask.png)';
+    el.style.width = '50px';
+    el.style.height = '50px';
+
+    new mapboxgl.Marker(el)
       .setLngLat([marker.lng, marker.lat])
       .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
       .setHTML(marker.infoWindow.content))
