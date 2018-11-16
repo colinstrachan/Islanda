@@ -1,20 +1,32 @@
 <%= render "components/tab" %>
 <div class="show-container">
   <div class="container show-wrapper">
-    <div class="row">
+  <table class='table table-hover'>
+    <thead>
+      <tr>
+        <th>Island</th>
+        <th>Host</th>
+        <th>Location</th>
+        <th>Check In</th>
+        <th>Check Out</th>
+      </tr>
+    </thead>
+    <tbody>
       <% @bookings.each do |book| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url(<%= cl_image_path book.island.photo, crop: :fill %>)">
-          <div class="card-category">
-            <%= book.island.name %>
-          </div>
-          <div class="card-description">
-            <h4 style="text-align: left">Check In: <%= book.start_date %></h4>
-            <h4 style="text-align: left">Check Out: <%= book.end_date %></h4>
-          </div>
-        </div>
-      </div>
+        <%if book.end_date < Date.today
+            value = "danger"
+          elsif book.start_date >= Date.today && book.end_date >= Date.today
+            value = "info"
+          else
+            value = "success"   
+          end %>
+          <tr class= <%="#{value}" %>>
+            <td><%= book.island.name %></td>
+            <td><%= cl_image_tag book.island.user.photo, width: 35, height: 35, crop: :thumb, gravity: :face%><%= book.island.user.first_name %></td>
+            <td><%= book.island.location.capitalize %></td>
+            <td><%= book.start_date %></td>
+            <td><%= book.end_date %></td>
+          </tr>
       <% end %>
-    </div>
-  </div>
-</div>
+    </tbody>
+  </table>
