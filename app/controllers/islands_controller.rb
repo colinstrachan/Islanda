@@ -36,6 +36,7 @@ class IslandsController < ApplicationController
     @booked_dates = []
     @island.bookings.each do |booking|
       @booked_dates << { from: booking.start_date, to: booking.end_date }
+      @review = Review.new
     end
 
   end
@@ -59,6 +60,8 @@ class IslandsController < ApplicationController
   def destroy
     @island.destroy
     redirect_to islands_path
+    flash[:notice] = "Your island listing has been removed."
+    authorize @island
   end
 
   private

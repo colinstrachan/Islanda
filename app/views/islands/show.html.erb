@@ -25,6 +25,19 @@
       <div class="island-body">
         <h5>Description</h5>
         <p><%= @island.description %></p>
+        <h2><%= pluralize @island.reviews.size, "review" %></h2>
+        <div id="reviews">
+          <% if @island.reviews.blank? %>
+            Be the first to leave a review for <%= @island.name %>
+          <% else %>
+            <% @island.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="island-review">
+          <%= render 'reviews/form', island: @island, review: @island.reviews.build %>
+        </div>
       </div>
       <div class="island-map">
         <h5>Map</h5>
@@ -41,3 +54,7 @@
     </div>
   </div>
 </div>
+
+
+
+
