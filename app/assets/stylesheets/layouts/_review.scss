@@ -1,0 +1,47 @@
+.review-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #efefef;
+}
+
+.review-head-user {
+  flex: 50% auto;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 20px;
+  border-left: 3px solid #afc2d5;
+  padding: 10px;
+}
+
+.review-head-rating {
+  flex: 50% auto;
+  padding-right: 10px;
+}
+
+.review-body {
+  font-size: 14px;
+  font-weight: thin;
+  color: #888;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border-left: 3px solid #afc2d5;
+  background-color: #efefef;
+  padding: 10px;
+}
+
+.review-form {
+  font-size: 14px;
+  font-weight: thin;
+}
+
+.be-the-first {
+  font-size: 14px;
+  color: #666;
+}
+
+.review-avatar {
+  border-radius: 50%;
+  margin-right: 10px;
+}

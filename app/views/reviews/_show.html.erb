@@ -1,3 +1,16 @@
-<p><%= review.description %></p>
-<p><%= review.rating %></p>
+<div class="review-head">
+  <div class="review-head-user">
+    <%= cl_image_tag review.user.photo, width: 35, height: 35, crop: :thumb, gravity: :face, class: 'review-avatar' %>
+    <%= " " + review.user.first_name + " " + review.user.last_name %></p>
+  </div>
+  <div class="review-head-rating">
+    <% review.rating.times do %>
+    <i class="far fa-star"></i>
+    <% end %>
+  </div>
+</div>
+<div class="review-body">
+  <%= review.description %>
+</div>
+
 
