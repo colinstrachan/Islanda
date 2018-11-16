@@ -1,8 +1,8 @@
 <%= render "components/tab" %>
-
-<div class="container">
-  <div class="row">
-    <% @bookings.each do |book| %>
+<div class="show-container">
+  <div class="container show-wrapper">
+    <div class="row">
+      <% @bookings.each do |book| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url(<%= cl_image_path book.island.photo, crop: :fill %>)">
           <div class="card-category">
@@ -14,8 +14,7 @@
           </div>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
