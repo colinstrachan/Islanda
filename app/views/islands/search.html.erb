@@ -1,5 +1,8 @@
 <div class="container">
 <h3 style="text-align: center"> Search results </h3>
+<% if @islands.blank? %>
+  <p style="color:#888; font-size:16px; text-align: center;">No islands matching your criteria are currently available.</p>
+<% end %>
   <div class="row">
     <% @islands.each do |i| %>
     <div class="col-xs-12 col-sm-4">
