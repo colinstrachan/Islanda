@@ -18,11 +18,10 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.island = @island
-    @review.save
-    redirect_to island_path(@island) if @island.save
+    @review.user = current_user
+    redirect_to island_path(@island) if @review.save
     render :new if @island.save == false
     authorize @review
-
   end
 
   def destroy

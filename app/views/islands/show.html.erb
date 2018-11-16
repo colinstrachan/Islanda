@@ -35,6 +35,9 @@
             <% end %>
           <% end %>
         </div>
+        <div class="island-review">
+          <%= render 'reviews/form', island: @island, review: @island.reviews.build %>
+        </div>
       </div>
       <div class="island-map">
         <h5>Map</h5>
@@ -52,8 +55,6 @@
   </div>
 </div>
 
-      <div class="island-book">
-        <%= render 'reviews/form', island: @island, review: @island.reviews.build %>
-      </div>
+
 
 
