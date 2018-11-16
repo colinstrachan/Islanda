@@ -1,11 +1,11 @@
-<div class="wrapper" style="background-image: url('https://si.wsj.net/public/resources/images/BN-LL243_ISLAND_M_20151125120156.jpg'); height: 78vh">
+<div class="wrapper" style="background-image: url('https://si.wsj.net/public/resources/images/BN-LL243_ISLAND_M_20151125120156.jpg'); height: 90vh">
   <div class="wrapper">
-    <div class="form-container">
+    <div class="form-container" style="margin-top: 90px" >
       <h3 style='text-align: center'>Sign up</h3>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
-        <div class="signup-container" style="width: 100%; padding: 20px; z-index: 10">
+        <div class="signup-container" style="width: 100%; padding: 20px">
           <%= f.input :first_name, required: true %>
 
           <%= f.input :last_name, required: true %>
@@ -24,11 +24,9 @@
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
           <%= f.button :submit, "Sign up", class: 'search-button'%>
+        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
         </div>
         <% end %>
-        <div style="text-align: center">
-          <%= render "devise/shared/links" %>
-        </div>
       </div>
     </div>
   </div>

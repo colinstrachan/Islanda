@@ -1,13 +1,17 @@
 .island-container {
   width: 100%;
-  background-color: #afc2d5;
+  background-color: #fff;
 }
 
 .photos-container {
-  width: 100%;
+  width: 100vw;
   height: 500px;
-  background-color: #afc2d5;
+  background-color: #fff;
   text-align: center;
+}
+
+.photo {
+  width: 100vw;
 }
 
 .island-wrapper {
