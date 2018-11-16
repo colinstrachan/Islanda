@@ -1,3 +1,11 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 .confirmation-container {
   background-color: #afc2d5;
   width: 100%;
@@ -50,6 +58,9 @@
   color: white;
   margin: 0 auto;
   font-weight: bold;
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 .confirm-button-grey {
@@ -59,4 +70,11 @@
   width: 50%;
   color: white;
   margin: 0 auto;
+  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
+  &:hover {
+    opacity: 0.9;
+  }
 }

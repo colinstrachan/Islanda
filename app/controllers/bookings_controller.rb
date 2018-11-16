@@ -35,12 +35,12 @@ before_action :set_islands, only: [:new, :create]
         @booking.end_date = requested_end_date
         @booking.save
         redirect_to booking_path(@booking) if @booking.save
+        flash[:alert] = "The dates of your booking are invalid." if @booking.save == false
         redirect_to island_path(@island) if @booking.save == false
-        flash[:error] = "The dates of your booking are invalid." if @booking.save == false
         authorize @booking
       else
+        flash[:alert] = "The island is not available on these dates."
         redirect_to island_path(@island)
-        flash[:error] = "The island is not available on these dates."
         authorize @booking
       end
       authorize @booking

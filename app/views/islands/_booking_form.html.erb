@@ -2,7 +2,7 @@
   <p>Price</p>
   <div class="booking-info">
     <div class="booking-price-left">
-      $<%= @island.price %>
+      $<%= number_with_delimiter(@island.price, :delimiter => ',') %>
     </div>
     <div class="booking-price-right">
       /day
