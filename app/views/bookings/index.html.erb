@@ -27,8 +27,11 @@
             <td><%= book.island.location.capitalize %></td>
             <td><%= book.start_date %></td>
             <td><%= book.end_date %></td>
-            <td width="150"><%= link_to booking_path(book), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <td width="150">
+              <% if book.start_date >= Date.today %>
+              <%= link_to booking_path(book), method: :delete, data: { confirm: "Are you sure?" } do %>
               <div class="cancel-booking-button">Cancel booking</div>
+              <% end %>
               <% end %>
             </td>
           </tr>

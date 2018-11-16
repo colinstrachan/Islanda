@@ -25,24 +25,32 @@
       <div class="island-body">
         <h5>Description</h5>
         <p><%= @island.description %></p>
-        <h2><%= pluralize @island.reviews.size, "review" %></h2>
-        <div id="reviews">
-          <% if @island.reviews.blank? %>
-            Be the first to leave a review for <%= @island.name %>
-          <% else %>
-            <% @island.reviews.each do |review| %>
-          <%= render 'reviews/show', review: review %>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="island-review">
-          <%= render 'reviews/form', island: @island, review: @island.reviews.build %>
-        </div>
       </div>
       <div class="island-map">
         <h5>Map</h5>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuQpVSocdlNpXVeLqygZwi-INoz2014qk&callback=initMap" async defer></script>
         <%= render 'islands/map' %>
+      </div>
+      <div id="reviews">
+        <h5>Reviews (<%= @island.reviews.size %>)</h5>
+        <% user_visited = false %>
+        <% @island.bookings.each do |booking| %>
+        <%   user_visited = true if booking.user == current_user && booking.end_date < Date.today %>
+        <% end %>
+        <% if @island.reviews.blank? && (@island.user == current_user || user_visited == false) %>
+          <p class="be-the-first">Nobody has reviewed this island yet.</p>
+        <% elsif @island.reviews.blank? && @island.user != current_user && user_visited == true %>
+          <p class="be-the-first">Be the first to leave a review for <%= @island.name %>!</p>
+        <% else %>
+          <% @island.reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="island-review">
+        <% if @island.user != current_user && user_visited == true %>
+        <%= render 'reviews/form', island: @island, review: @island.reviews.build %>
+        <% end %>
       </div>
     </div>
     <div class="island-book">

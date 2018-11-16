@@ -1,9 +1,9 @@
-
-<%= simple_form_for([ island, review ], remote: true) do |form| %>
-  <%= form.input :description, as: :text %>
-  <%= form.input :rating, required: true, :collection => ["1", "2", "3", "4", "5"] %>
-  <%= form.button :submit %>
-<% end %>
-
-
-
+<div class="review-form">
+  <%= simple_form_for([ island, review ], remote: true) do |form| %>
+    <%= form.input :description, label: "Tell us what you thought of this island:", as: :text %>
+    <%= form.input :rating, required: true, :collection => ["1", "2", "3", "4", "5"] %>
+  <div class="booking-button">
+    <%= form.button :submit, class: "book-button" %>
+  <% end %>
+  </div>
+</div>
