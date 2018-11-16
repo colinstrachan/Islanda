@@ -60,6 +60,8 @@ class IslandsController < ApplicationController
   def destroy
     @island.destroy
     redirect_to islands_path
+    flash[:notice] = "Your island listing has been removed."
+    authorize @island
   end
 
   private
