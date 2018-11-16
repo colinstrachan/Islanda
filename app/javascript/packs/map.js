@@ -4,7 +4,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
-
+console.log('hello world')
 const mapElement = document.getElementById('map');
 
 if (mapElement) { // only build a map if there's a div#map to inject into
@@ -22,9 +22,9 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   markers.forEach((marker) => {
     const el = document.createElement('div');
     el.className = 'marker';
-    el.style.backgroundImage = 'url(https://res.cloudinary.com/astridbosch/image/upload/v1542376497/mask.png)';
-    el.style.width = '50px';
-    el.style.height = '50px';
+    el.style.backgroundImage = 'url(https://res.cloudinary.com/dw7ox75dg/image/upload/v1542387846/island-icon-png-11.png)';
+    el.style.width = '25px';
+    el.style.height = '25px';
 
     new mapboxgl.Marker(el)
       .setLngLat([marker.lng, marker.lat])
