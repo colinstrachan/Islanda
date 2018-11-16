@@ -16,12 +16,21 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
+    authorize @review = Review.new(review_params)
     @review.island = @island
     @review.user = current_user
-    redirect_to island_path(@island) if @review.save
-    render :new if @island.save == false
-    authorize @review
+    if @review.save
+      respond_to do |format|
+        format.html { redirect_to island_path(@island) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'island/show' }
+        format.js  # <-- idem
+      end
+    end
+
   end
 
   def destroy
